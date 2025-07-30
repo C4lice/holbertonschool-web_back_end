@@ -2,18 +2,17 @@
 """
 module à 1 fonction
 """
-from typing import List
+import time
 import asyncio
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-async def wait_n(n: int, max_delay: int = 10) -> List[float]:
+def measure_time(n: int, max_delay: int) -> float:
     """
-    attendre un temps aléatoire n temps
+    faire la moyenne du temps d'exécution du code
     """
-    wait_random = __import__('0-basic_async_syntax').wait_random
-    tasks = [wait_random(max_delay) for i in range(n)]
-    result: List[float] = []
-    for completed_task in asyncio.as_completed(tasks):
-        delay = await completed_task
-        result.append(delay)
-    return (result)
+    start = time.time()
+    asyncio.run(wait_n(n, max_delay))
+    end = time.time()
+    execution_time = end - start
+    return (execution_time / n)
