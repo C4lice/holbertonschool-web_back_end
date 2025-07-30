@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Générateur asynchrone qui produit des valeurs flottantes aléatoires entre 0 et 10.
+Asynchronous generator that produces random float values between 0 and 10.
 """
 import asyncio
 import random
@@ -9,8 +9,8 @@ from typing import Generator
 
 async def async_generator() -> Generator[float, None, None]:
     """
-    Boucle 10 fois, en attendant à chaque fois 1 seconde de manière asynchrone,
-    puis donne une valeur flottante aléatoire entre 0 et 10.
+    Loops 10 times, waiting asynchronously for 1 second each time,
+    then gives a random float value between 0 and 10.
     """
     for i in range(10):
         await asyncio.sleep(1)
