@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-module with 1 function
+module à 1 fonction
 """
 import asyncio
 import random
@@ -8,7 +8,7 @@ import random
 
 async def wait_random(max_delay: int = 10) -> float:
     """
-    wait for a random time
+    attendre une durée aléatoire
     """
     delay: float = random.uniform(0, max_delay)
     await asyncio.sleep(delay)
