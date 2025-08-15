@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """
-9-insert_school.py
 Module containing the function insert_school.
 """
 
