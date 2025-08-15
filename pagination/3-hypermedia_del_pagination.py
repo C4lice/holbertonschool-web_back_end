@@ -43,7 +43,8 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """
-        returns a dictation of valuable information about the current page and the next one
+        returns a dictation of valuable information about
+        the current page and the next one
         """
         data_set = self.indexed_dataset()
         assert index < len(data_set)
