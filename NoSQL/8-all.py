@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """
-8-all.py
 Module contenant la fonction list_all.
 """
 
