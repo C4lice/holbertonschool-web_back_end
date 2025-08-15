@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-module avec 1 classe
+module with 1 class
 """
 import csv
 import math
@@ -10,7 +10,7 @@ from typing import List, Tuple, Dict
 
 class Server:
     """
-    Classe serveur permettant de paginer une base de données de prénoms populaires.
+    Server class used to paginate a database of popular first names.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -30,8 +30,8 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-        la fonction renvoie le premier et le dernier index de la page
-        dépend de la taille de la page
+        the function returns the first and last indexes of the page
+        depends on the size of the page
         """
         assert isinstance(page, int)
         assert page > 0
@@ -49,15 +49,15 @@ class Server:
 
     def index_range(self, page: int, page_size: int) -> Tuple:
         """
-        la fonction renvoie le premier et le dernier index de la page
-        dépend de la taille de la page
+        the function returns the first and last indexes of the page
+        depends on the size of the page
         """
         result: Tuple = ((page - 1) * page_size, page * page_size)
         return result
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """
-        la fonction renvoie un dict de données utiles
+        the function returns a dictation of useful data
         """
         total_page = len(self.dataset())
         data = self.get_page(page, page_size)

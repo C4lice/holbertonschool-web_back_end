@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Pagination hypermédia résistante aux suppressions
+Deletion-resistant hypermedia pagination
 """
 
 import csv
@@ -10,7 +10,7 @@ from typing import List, Dict
 
 class Server:
     """
-    Classe serveur permettant de paginer une base de données de prénoms populaires.
+    Server class used to paginate a database of popular first names.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -31,7 +31,7 @@ class Server:
 
     def indexed_dataset(self) -> Dict[int, List]:
         """
-        Ensemble de données indexé par la position de tri, en commençant par 0
+        Data set indexed by sort position, starting with 0
         """
         if self.__indexed_dataset is None:
             dataset = self.dataset()
@@ -43,7 +43,7 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """
-        renvoie un dict d'informations précieuses sur la page actuelle et la suivante
+        returns a dictation of valuable information about the current page and the next one
         """
         data_set = self.indexed_dataset()
         assert index < len(data_set)
